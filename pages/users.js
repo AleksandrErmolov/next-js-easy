@@ -1,4 +1,5 @@
 import {useState} from "react";
+import Link from "next/link";
 
 
 const Users = () => {
@@ -14,8 +15,12 @@ const Users = () => {
             <h1>Список пользователей</h1>
             <ul>
                 {users.map(user =>
-                    <li>
-                        {user.name}
+                    <li key={{}}>
+                        <Link href={`/users/${user.id}`}>
+                            <a>{user.name}</a>
+                            {/*<A href=`/users/${user.id` text={user.name}/>*/}
+
+                        </Link>
                     </li>
                 )}
             </ul>
